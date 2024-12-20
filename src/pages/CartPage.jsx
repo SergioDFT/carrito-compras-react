@@ -4,6 +4,7 @@ import Swal from "sweetalert2"
 
 export const CartPage = () => {
   const { shoppingList, removeProduct, decrementQuantity, incrementQuantity } = useContext(CartContext)
+
   const calculateTotal = () => {
     return shoppingList.reduce((total, product) => total + product.price * product.quantity, 0).toFixed(2)
   }
@@ -51,7 +52,7 @@ export const CartPage = () => {
         </tbody>
       </table>
       <div className="d-grid gap-2">
-        <button className="btn btn-primary" type="button" onClick={handlerPurchase()}>Comprar</button>
+        <button className="btn btn-primary" type="button" onClick={handlerPurchase}>Comprar</button>
       </div>
     </>
   )
